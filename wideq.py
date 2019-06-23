@@ -2431,10 +2431,13 @@ class WasherStatus(object):
 
     @property
     def water_temp_option_state(self):
-        water_temp = self.lookup_enum('WTemp')
-        if water_temp == '-':
-            return 'OFF'
-        return WASHERWATERTEMP(water_temp)
+        try:
+            water_temp = self.lookup_enum('WTemp')
+            if water_temp == '-':
+                return 'OFF'
+            return WASHERWATERTEMP(water_temp)
+        except:
+            return 'UNKNOWN'
 
     @property
     def rinsecount_option_state(self):
