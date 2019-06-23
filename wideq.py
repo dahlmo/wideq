@@ -2417,10 +2417,13 @@ class WasherStatus(object):
 
     @property
     def wash_option_state(self):
-        soillevel = self.lookup_enum('SoilLevel')
-        if soillevel == '-':
+        try:
+            soillevel = self.lookup_enum('SoilLevel')
+            if soillevel == '-':
+                return 'OFF'
+            return WASHERSOILLEVEL(soillevel)
+        except:
             return 'OFF'
-        return WASHERSOILLEVEL(soillevel)
     
     @property
     def spin_option_state(self):
