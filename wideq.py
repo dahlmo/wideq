@@ -2437,7 +2437,7 @@ class WasherStatus(object):
                 return 'OFF'
             return WASHERWATERTEMP(water_temp)
         except:
-            return 'UNKNOWN'
+            return 'OFF'
 
     @property
     def rinsecount_option_state(self):
