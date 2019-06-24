@@ -10,7 +10,7 @@ from collections import namedtuple
 import enum
 import time
 
-GATEWAY_URL = 'https://kic.lgthinq.com:46030/api/common/gatewayUriList'
+GATEWAY_URL = 'https://eic.lgthinq.com:46030/api/common/gatewayUriList'
 APP_KEY = 'wideq'
 SECURITY_KEY = 'nuts_securitykey'
 DATA_ROOT = 'lgedmRoot'
