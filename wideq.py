@@ -216,11 +216,11 @@ STATE_WASHER_WATERTEMP_SEMI_WARM  = "Semi-Warm"
 STATE_WASHER_WATERTEMP_WARM  = "Warm"
 STATE_WASHER_WATERTEMP_HOT  = "Hot"
 STATE_WASHER_WATERTEMP_EXTRA_HOT  = "Extra Hot"
-STATE_WASHER_WATERTEMP_C20 = '20'
-STATE_WASHER_WATERTEMP_C30 = '30'
-STATE_WASHER_WATERTEMP_C40 = '40'
-STATE_WASHER_WATERTEMP_C60 = '60'
-STATE_WASHER_WATERTEMP_C95 = '95'
+STATE_WASHER_WATERTEMP_C20 = '20 C'
+STATE_WASHER_WATERTEMP_C30 = '30 C'
+STATE_WASHER_WATERTEMP_C40 = '40 C'
+STATE_WASHER_WATERTEMP_C60 = '60 C'
+STATE_WASHER_WATERTEMP_C95 = '95 C'
 
 STATE_WASHER_SPINSPEED_NO_SELECT  = "No select"
 STATE_WASHER_SPINSPEED_EXTRA_LOW  = "Extra Low"
@@ -2507,7 +2507,7 @@ class WasherStatus(object):
     @property
     def water_temp_option_state(self):
         try:
-            water_temp = self.lookup_enum('WTemp')
+            water_temp = self.lookup_enum('WaterTemp')
             if water_temp == '-':
                 return 'OFF'
             return WASHERWATERTEMP(water_temp)
